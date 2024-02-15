@@ -11,6 +11,10 @@ export const StyledMenu = styled(Modal)`
   margin-left: auto;
   background-color: #ffffff;
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    width: 374px;
+  }
 `;
 
 export const CloseCross = styled(MdClose)`
@@ -20,9 +24,14 @@ export const CloseCross = styled(MdClose)`
   width: 32px;
   height: 32px;
   color: #262626;
+
+  @media screen and (min-width: 768px) {
+    width: 36px;
+    height: 36px;
+  }
 `;
 
-export const LinksList = styled.ul` 
+export const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,6 +53,11 @@ export const LinksItem = styled.li`
   &.active {
     border: 1px solid #f6b83d;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 120px;
+    height: 50px;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -51,4 +65,8 @@ export const StyledLink = styled(Link)`
   font-weight: 500;
   color: #262626;
   text-decoration: none;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
