@@ -30,7 +30,12 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    width: 1216px;
+    display: flex;
+    width: 100%;
+    min-width: 1216px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 32px;
   }
 `;
 
@@ -48,6 +53,13 @@ export const Title = styled.h1`
     line-height: 77px;
     margin-bottom: 32px;
   }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 760px;
+    font-size: 90px;
+    line-height: 87px;
+    margin-bottom: 0;
+  }
 `;
 
 export const TextSpan = styled.span`
@@ -62,6 +74,11 @@ export const TextSpan = styled.span`
     font-size: 80px;
     line-height: 77px;
   }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 90px;
+    line-height: 87px;
+  }
 `;
 
 export const Text = styled.p`
@@ -75,5 +92,8 @@ export const Text = styled.p`
   @media screen and (min-width: 768px) {
     max-width: 255px;
     margin-left: auto;
+    font-size: 18px;
+    line-height: 1.22;
+    align-self: flex-end;
   }
 `;

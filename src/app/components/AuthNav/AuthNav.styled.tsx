@@ -10,6 +10,11 @@ export const NavBox = styled.nav`
   @media screen and (min-width: 768px) {
     padding: 0px 49px 40px;
   }
+
+  @media screen and (min-width: 1280px) {
+    position: static;
+    padding: 0;
+  }
 `;
 
 export const LinksList = styled.ul`
@@ -31,6 +36,7 @@ export const LinksItemLog = styled.li`
   width: 100%;
   height: 42px;
   border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: #f6b83d;
   cursor: pointer;
 
@@ -74,6 +80,10 @@ export const StyledLinkLog = styled(Link)`
   color: #ffffff;
   text-decoration: none;
   white-space: nowrap;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+  }
 `;
 
 export const StyledLinkReg = styled(Link)`
@@ -81,4 +91,8 @@ export const StyledLinkReg = styled(Link)`
   font-weight: 700;
   color: #f6b83d;
   text-decoration: none;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+  }
 `;
