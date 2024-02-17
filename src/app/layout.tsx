@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={FONT.className}>
-        <div style={{ padding: '10px 20px 0px' }}>
+        <div style={{ padding: '10px 20px 0px', backgroundColor: '#F9F9F9' }}>
           <AppBar />
         </div>
         {children}

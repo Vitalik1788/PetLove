@@ -50,7 +50,7 @@ export const LinksList = styled.ul`
   display: flex;
   gap: 10px;
   list-style: none;
-  
+  margin-left: 80px;
 `;
 
 export const LinksItem = styled.li`
@@ -70,7 +70,7 @@ export const LinksItem = styled.li`
   @media screen and (min-width: 1280px) {
     width: fit-content;
     height: auto;
-    padding: 15px 20px;    
+    padding: 15px 20px;
   }
 `;
 
@@ -85,7 +85,7 @@ export const StyledLink = styled(Link)`
 
   @media screen and (min-width: 1280px) {
     white-space: nowrap;
-    font-size: 16px;    
+    font-size: 16px;
   }
 `;
 

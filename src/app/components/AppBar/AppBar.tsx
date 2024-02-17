@@ -13,7 +13,7 @@ export default function AppBar() {
       style={
         pathName === '/'
           ? { backgroundColor: '#f6b83d' }
-          : { backgroundColor: '#ffffff' }
+          : { backgroundColor: '#F9F9F9' }
       }
     >
       <Nav />
