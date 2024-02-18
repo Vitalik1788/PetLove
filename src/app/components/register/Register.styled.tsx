@@ -33,6 +33,10 @@ export const FormText = styled.p`
   margin-bottom: 20px;
 `;
 
+export const FieldIconBox = styled.div`
+  position: relative;
+`;
+
 export const FormField = styled(Field)`
   width: 100%;
   padding: 12px;
@@ -62,6 +66,22 @@ export const FormField = styled(Field)`
   }
 `;
 
+export const IconCheckBox = styled.svg`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+`;
+
+export const IconCheckInPassword = styled.svg`
+  position: absolute;
+  top: 12px;
+  right: 36px;
+  width: 18px;
+  height: 18px;
+`;
+
 export const FieldError = styled.p`
   padding-left: 12px;
   margin-bottom: 10px;
@@ -70,7 +90,6 @@ export const FieldError = styled.p`
   line-height: 14px;
   letter-spacing: -0.03em;
   text-align: left;
-  color: #ef2447;
 `;
 
 export const PasswordBox = styled.div`
