@@ -7,14 +7,11 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 20px 0px;
 
   @media screen and (min-width: 768px) {
-    padding: 16px 32px 0px;
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 16px 64px 0px;
   }
 `;
 

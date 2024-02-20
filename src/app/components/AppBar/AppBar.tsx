@@ -3,9 +3,13 @@
 import { usePathname } from 'next/navigation';
 import Nav from '../Nav/Nav';
 import { Wrapper } from './AppBar.styled';
+import { useState } from 'react';
+import AuthNav from '../AuthNav/AuthNav';
+import UserBar from '../userBar/UserBar';
 
 export default function AppBar() {
   const pathName = usePathname();
+  const isLoggedIn = useState(false);
 
 
   return (
@@ -17,6 +21,7 @@ export default function AppBar() {
       }
     >
       <Nav />
+      {/* {isLoggedIn ? <AuthNav /> : <UserBar />} */}
     </Wrapper>
   );
 }

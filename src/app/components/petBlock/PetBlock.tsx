@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { FormIMG } from './PetBlock.styled';
+import { FormIMG, Wrapper } from './PetBlock.styled';
 
 interface IPetBlock {
   src: string | StaticImageData;
@@ -7,9 +7,9 @@ interface IPetBlock {
 
 const PetBlock = ({ src }: IPetBlock) => {
   return (
-    <div>
+    <Wrapper>
       <FormIMG src={src} alt="Red cat" priority={true}/>
-    </div>
+    </Wrapper>
   );
 };
 

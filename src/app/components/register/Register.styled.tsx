@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Field } from 'formik';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export const Wrapper = styled.div`
@@ -14,6 +13,16 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 375px) and (max-width: 767px) {
     width: 335px;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+  }
 `;
 
 export const FormBox = styled.div`
@@ -21,6 +30,13 @@ export const FormBox = styled.div`
   padding: 27px 20px;
   background-color: #ffffff;
   border-radius: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 16px;
+    padding: 30px 140px;
+    border-radius: 60px;
+    margin-top: 32px;
+  }
 `;
 
 export const FormText = styled.p`
@@ -31,6 +47,12 @@ export const FormText = styled.p`
   text-align: left;
   color: #262626;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.22;
+    margin-bottom: 32px;
+  }
 `;
 
 export const FieldIconBox = styled.div`
@@ -49,6 +71,12 @@ export const FormField = styled(Field)`
   line-height: 18px;
   letter-spacing: -0.03em;
   text-align: left;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 
   ::placeholder {
     font-size: 14px;
@@ -72,6 +100,13 @@ export const IconCheckBox = styled.svg`
   right: 12px;
   width: 18px;
   height: 18px;
+
+  @media screen and (min-width: 768px) {
+    top: 15px;
+    right: 15px;
+    width: 22px;
+    height: 22px;
+  }
 `;
 
 export const IconCheckInPassword = styled.svg`
@@ -80,6 +115,13 @@ export const IconCheckInPassword = styled.svg`
   right: 36px;
   width: 18px;
   height: 18px;
+
+  @media screen and (min-width: 768px) {
+    top: 15px;
+    right: 42px;
+    width: 22px;
+    height: 22px;
+  }
 `;
 
 export const FieldError = styled.p`
@@ -102,6 +144,13 @@ export const FieldIconEye = styled.svg`
   right: 12px;
   width: 18px;
   height: 18px;
+
+  @media screen and (min-width: 768px) {
+    top: 15px;
+    right: 15px;
+    width: 22px;
+    height: 22px;
+  }
 `;
 
 export const Button = styled.button`
@@ -117,6 +166,13 @@ export const Button = styled.button`
   font-weight: 700;
   color: #ffffff;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 16px 0;
+    font-size: 16px;
+  }
 `;
 
 export const TextBox = styled.div`
@@ -131,6 +187,10 @@ export const TextToLogin = styled.p`
   letter-spacing: -0.03em;
   text-align: left;
   color: rgba(38, 38, 38, 0.5);
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const ToLoginLink = styled(Link)`
@@ -142,4 +202,8 @@ export const ToLoginLink = styled(Link)`
   text-align: left;
   color: #f6b83d;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;

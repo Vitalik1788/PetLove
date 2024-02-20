@@ -20,7 +20,10 @@ import {
 import * as Yup from 'yup';
 import Title from '../title/Title';
 import PetBlock from '../petBlock/PetBlock';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useWindowSize from '@/app/hooks/useWindowSize';
+import tablet_cat from '../../assets/images/tablet_register_cat.jpg';
+import desktop_cat from "../../assets/images/desktop_cat_reg.jpg";
 
 interface IRegisterForm {
   name: string;
@@ -53,6 +56,21 @@ let schema: Yup.ObjectSchema<IRegisterForm> = Yup.object({
 
 export default function RegisterForm() {
   const [passwordIsOpen, setPasswordIsOpen] = useState(false);
+  const [image, setImage] = useState(cat_mobile);
+  const size = useWindowSize();
+
+  useEffect(() => {
+    function getImageBySize() {
+      if (size < 768) {
+        setImage(cat_mobile);
+      } else if (size >= 768 && size < 1280) {
+        setImage(tablet_cat);
+      } else if (size >=1280) {
+        setImage(desktop_cat);
+      }
+    }
+    getImageBySize();
+  }, [size]);
 
   function togglePassword() {
     if (passwordIsOpen) {
@@ -79,7 +97,7 @@ export default function RegisterForm() {
 
   return (
     <Wrapper>
-      <PetBlock src={cat_mobile} />
+      <PetBlock src={image} />
       <FormBox>
         <Title>Registration</Title>
         <FormText>Thank you for your interest in our platform.</FormText>
