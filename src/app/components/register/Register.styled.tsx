@@ -5,6 +5,7 @@ import Link from 'next/link';
 export const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 0;
 
   @media screen and (max-width: 374px) {
     max-width: 335px;
@@ -16,6 +17,7 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 704px;
+    padding: 32px 0;
   }
 
   @media screen and (min-width: 1280px) {
@@ -35,7 +37,12 @@ export const FormBox = styled.div`
     margin-top: 16px;
     padding: 30px 140px;
     border-radius: 60px;
-    margin-top: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-width: 592px;
+    margin-top: 0;
+    padding: 69px 84px;
   }
 `;
 

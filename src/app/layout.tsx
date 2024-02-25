@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import './globals.css';
 import { Manrope } from 'next/font/google';
 import AppBar from './components/AppBar/AppBar';
+import { LayoutBox } from './layout.styled';
 
 const FONT = Manrope({ subsets: ['latin'] });
 
@@ -13,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={FONT.className}>
-        <div style={{ padding: '10px 20px 0px', backgroundColor: '#F9F9F9' }}>
+        <LayoutBox>
           <AppBar />
-        </div>
+        </LayoutBox>
         {children}
       </body>
     </html>

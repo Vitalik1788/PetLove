@@ -26,6 +26,8 @@ export const ImageBox = styled.div`
 export const IMGMobile = styled(Image)`
   width: 100%;
   height: auto;
+  border-radius: 30px;
+  background-color: transparent;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -36,6 +38,8 @@ export const IMGTablet = styled(Image)`
   width: 100%;
   height: auto;
   display: none;
+  border-radius: 60px;
+  background-color: transparent;
 
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     display: block;
@@ -45,6 +49,8 @@ export const IMGTablet = styled(Image)`
 export const IMGDesktop = styled(Image)`
   width: 100%;
   height: auto;
+  border-radius: 60px;
+  background-color: transparent;
 
   @media screen and (max-width: 1279px) {
     display: none;

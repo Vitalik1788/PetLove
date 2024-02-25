@@ -23,13 +23,12 @@ export const Wrapper = styled.div`
 `;
 
 export const FormIMG = styled(Image)`
+  display: block;
   width: 100%;
   height: auto;
-  margin-top: 20px;
   border-radius: 30px;
 
   @media screen and (min-width: 768px) {
     border-radius: 60px;
-    margin-top: 32px;
   }
 `;

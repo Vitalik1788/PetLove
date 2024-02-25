@@ -33,7 +33,13 @@ export default function Nav() {
     <>
       {pathName === '/' ? (
         <Wrapper>
-          <LogoImg src={logo_mobile_white} alt="petlove logo" priority={true} />
+          <StyledLink href="/">
+            <LogoImg
+              src={logo_mobile_white}
+              alt="petlove logo"
+              priority={true}
+            />
+          </StyledLink>
           <BurgerMenuIcon style={{ color: '#ffffff' }} onClick={openModal} />
           <NavBox>
             <LinksList>
@@ -66,27 +72,27 @@ export default function Nav() {
         </Wrapper>
       ) : (
         <Wrapper>
-          <LogoImg src={logo_mobile_dark} alt="petlove logo" priority={true} />
+          <StyledLink href="/">
+            <LogoImg
+              src={logo_mobile_dark}
+              alt="petlove logo"
+              priority={true}
+            />
+          </StyledLink>
           <BurgerMenuIcon style={{ color: '#262626' }} onClick={openModal} />
           <NavBox>
             <LinksList>
-              <LinksItem
-                style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}
-              >
+              <LinksItem style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}>
                 <StyledLink style={{ color: '#262626' }} href="/news">
                   News
                 </StyledLink>
               </LinksItem>
-              <LinksItem
-                style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}
-              >
+              <LinksItem style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}>
                 <StyledLink style={{ color: '#262626' }} href="/notices">
                   Find pet
                 </StyledLink>
               </LinksItem>
-              <LinksItem
-                style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}
-              >
+              <LinksItem style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}>
                 <StyledLink style={{ color: '#262626' }} href="/friends">
                   Our friends
                 </StyledLink>
