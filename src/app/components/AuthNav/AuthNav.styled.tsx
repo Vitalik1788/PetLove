@@ -20,6 +20,7 @@ export const LinkToLogIn = styled(Link)`
   color: #ffffff;
   background-color: #f6b83d;
   border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   text-decoration: none;
 `;
 

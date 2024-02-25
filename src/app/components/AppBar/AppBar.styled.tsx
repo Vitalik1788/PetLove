@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import { FiMenu } from 'react-icons/fi';
 
 export const Wrapper = styled.div`
@@ -21,6 +22,8 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     width: 704px;
     padding-top: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
   }
@@ -38,6 +41,15 @@ export const AppBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const LogoImg = styled(Image)`
+  max-width: 76px;
+  height: auto;
+
+  @media screen and (min-width: 768px) {
+    max-width: 106px;
+  }
 `;
 
 export const Box = styled.div`

@@ -2,11 +2,14 @@
 
 import { usePathname } from 'next/navigation';
 import Nav from '../Nav/Nav';
-import { AppBox, Box, BurgerMenuIcon, Wrapper } from './AppBar.styled';
+import { AppBox, Box, BurgerMenuIcon, LogoImg, Wrapper } from './AppBar.styled';
 import { useState } from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import UserBar from '../userBar/UserBar';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
+import logo_mobile_white from '../../assets/images/logo_mobile_white2x.png';
+import logo_mobile_dark from '../../assets/images/logo_mobile_dark2x.png';
+import Link from 'next/link';
 
 export default function AppBar() {
   const pathName = usePathname();
@@ -32,6 +35,13 @@ export default function AppBar() {
       }
     >
       <AppBox>
+        <Link href="/">
+          <LogoImg
+            src={pathName === '/' ? logo_mobile_white : logo_mobile_dark}
+            alt="petlove logo"
+            priority={true}
+          />
+        </Link>
         <Nav />
         <Box>
           {isLoggedIn ? <AuthNav /> : <UserBar />}

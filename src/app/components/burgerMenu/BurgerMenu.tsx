@@ -16,6 +16,7 @@ export interface IBurgerMenu {
 }
 
 export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
+
   return (
     <>
       <StyledMenu
