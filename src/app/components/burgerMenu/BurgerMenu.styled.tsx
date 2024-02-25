@@ -70,3 +70,58 @@ export const StyledLink = styled(Link)`
     font-size: 16px;
   }
 `;
+
+export const LinksBox = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0px 20px 40px;  
+`;
+
+export const ButtonList = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+`;
+
+export const LinkLogIn = styled(Link)`
+  display: block;
+  padding: 12px 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #f6b83d;
+
+  @media screen and (min-width: 768px) {
+    padding: 15px 35px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+`;
+
+export const LinkReg = styled(Link)`
+  display: block;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  color: #f6b83d;
+  background-color: #fff4df;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+`;

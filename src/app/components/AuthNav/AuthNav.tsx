@@ -1,23 +1,11 @@
-import {
-  LinksItemLog,
-  LinksItemReg,
-  LinksList,
-  NavBox,
-  StyledLinkLog,
-  StyledLinkReg,
-} from './AuthNav.styled';
+import { LinkToLogIn, LinkToReg, LinksBox } from "./AuthNav.styled";
+
 
 export default function AuthNav() {
   return (
-    <NavBox>
-      <LinksList>
-        <LinksItemLog>
-          <StyledLinkLog href="/login">LOG IN</StyledLinkLog>
-        </LinksItemLog>
-        <LinksItemReg>
-          <StyledLinkReg href="/register">REGISTRATION</StyledLinkReg>
-        </LinksItemReg>
-      </LinksList>
-    </NavBox>
+    <LinksBox>
+      <LinkToLogIn href='/login'>LOG IN</LinkToLogIn>
+      <LinkToReg href='/register'>REGISTRATION</LinkToReg>
+    </LinksBox>
   );
 }

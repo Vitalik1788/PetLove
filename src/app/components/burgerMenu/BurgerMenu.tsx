@@ -1,6 +1,9 @@
-import AuthNav from '../AuthNav/AuthNav';
 import {
+  ButtonList,
   CloseCross,
+  LinkLogIn,
+  LinkReg,
+  LinksBox,
   LinksItem,
   LinksList,
   StyledLink,
@@ -34,8 +37,13 @@ export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
               <StyledLink href="/friends">Our friends</StyledLink>
             </LinksItem>
           </LinksList>
+          <LinksBox>
+            <ButtonList>
+              <LinkLogIn href="/login">LOG IN</LinkLogIn>
+              <LinkReg href="/register">REGISTRATION</LinkReg>
+            </ButtonList>
+          </LinksBox>
         </nav>
-        <AuthNav />
       </StyledMenu>
     </>
   );

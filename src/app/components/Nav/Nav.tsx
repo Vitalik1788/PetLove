@@ -2,8 +2,6 @@ import { usePathname } from 'next/navigation';
 import logo_mobile_white from '../../assets/images/logo_mobile_white2x.png';
 import logo_mobile_dark from '../../assets/images/logo_mobile_dark2x.png';
 import {
-  AuthBox,
-  BurgerMenuIcon,
   LinksItem,
   LinksList,
   LogoImg,
@@ -11,23 +9,9 @@ import {
   StyledLink,
   Wrapper,
 } from './Nav.styled';
-import BurgerMenu from '../burgerMenu/BurgerMenu';
-import { useState } from 'react';
-import AuthNav from '../AuthNav/AuthNav';
 
 export default function Nav() {
-  const pathName = usePathname();
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  function openModal() {
-    setMenuIsOpen(true);
-    document.body.style.overflowY = 'hidden';
-  }
-
-  function closeModal() {
-    setMenuIsOpen(false);
-    document.body.style.overflowY = 'unset';
-  }
+  const pathName = usePathname();  
 
   return (
     <>
@@ -40,7 +24,6 @@ export default function Nav() {
               priority={true}
             />
           </StyledLink>
-          <BurgerMenuIcon style={{ color: '#ffffff' }} onClick={openModal} />
           <NavBox>
             <LinksList>
               <LinksItem
@@ -66,9 +49,6 @@ export default function Nav() {
               </LinksItem>
             </LinksList>
           </NavBox>
-          <AuthBox>
-            <AuthNav />
-          </AuthBox>
         </Wrapper>
       ) : (
         <Wrapper>
@@ -79,7 +59,6 @@ export default function Nav() {
               priority={true}
             />
           </StyledLink>
-          <BurgerMenuIcon style={{ color: '#262626' }} onClick={openModal} />
           <NavBox>
             <LinksList>
               <LinksItem style={{ border: '1px solid rgba(38, 38, 38, 0.15)' }}>
@@ -99,12 +78,8 @@ export default function Nav() {
               </LinksItem>
             </LinksList>
           </NavBox>
-          <AuthBox>
-            <AuthNav />
-          </AuthBox>
         </Wrapper>
       )}
-      <BurgerMenu menuIsOpen={menuIsOpen} closeModal={closeModal} />
     </>
   );
 }

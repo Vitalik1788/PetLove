@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiMenu } from 'react-icons/fi';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -24,18 +23,6 @@ export const LogoImg = styled(Image)`
   }
 `;
 
-export const BurgerMenuIcon = styled(FiMenu)`
-  width: 24px;
-  height: auto;
-
-  @media screen and (min-width: 768px) {
-    width: 30px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    display: none;
-  }
-`;
 
 export const NavBox = styled.nav`
   @media screen and (max-width: 1279px) {
@@ -86,8 +73,3 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const AuthBox = styled.div`
-  @media screen and (max-width: 1279px) {
-    display: none;
-  }
-`;

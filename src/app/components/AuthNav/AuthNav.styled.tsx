@@ -1,98 +1,37 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
 
-export const NavBox = styled.nav`
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding: 0px 20px 40px;
+export const LinksBox = styled.div`
+  margin-right: 16px;
 
-  @media screen and (min-width: 768px) {
-    padding: 0px 49px 40px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    position: static;
-    padding: 0;
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 `;
 
-export const LinksList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  list-style: none;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-  }
-`;
-
-export const LinksItemLog = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 42px;
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: #f6b83d;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    background-color: #f9b020;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: fit-content;
-    height: auto;
-    padding: 15px 35px;
-  }
-`;
-
-export const LinksItemReg = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 42px;
-  border-radius: 30px;
-  background-color: #fff4df;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    background-color: #fbe7c1;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: fit-content;
-    height: auto;
-    padding: 15px 35px;
-  }
-`;
-
-export const StyledLinkLog = styled(Link)`
-  font-size: 14px;
+export const LinkToLogIn = styled(Link)`
+  padding: 15px 35px;
+  margin-right: 8px;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-align: center;
   color: #ffffff;
+  background-color: #f6b83d;
+  border-radius: 30px;
   text-decoration: none;
-  white-space: nowrap;
-
-  @media screen and (min-width: 1280px) {
-    font-size: 16px;
-  }
 `;
 
-export const StyledLinkReg = styled(Link)`
-  font-size: 14px;
+export const LinkToReg = styled(Link)`
+  padding: 15px 20px;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-align: center;
   color: #f6b83d;
+  background-color: #fff4df;
+  border-radius: 30px;
   text-decoration: none;
-
-  @media screen and (min-width: 1280px) {
-    font-size: 16px;
-  }
 `;
