@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    width: 592px;
+    width: 100%;
     margin: 0;
   }
 `;

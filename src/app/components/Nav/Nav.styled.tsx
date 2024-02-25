@@ -5,6 +5,10 @@ export const LinksList = styled.ul`
   display: flex;
   gap: 10px;
   list-style: none;
+
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
 `;
 
 export const StyledLink = styled(Link)`

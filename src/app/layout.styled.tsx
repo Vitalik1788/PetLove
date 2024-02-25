@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const LayoutBox = styled.div`
   background-color: #f9f9f9;
