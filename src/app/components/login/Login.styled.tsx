@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 1280px) {
     width: 100%;
     display: flex;
+    justify-content: center;
     gap: 32px;
   }
 `;
@@ -40,7 +41,7 @@ export const FormBox = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    min-width: 592px;
+    max-width: 592px;
     margin-top: 0;
     padding: 69px 84px;
   }

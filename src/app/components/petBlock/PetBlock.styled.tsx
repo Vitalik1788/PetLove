@@ -18,7 +18,8 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    min-width: 592px;
+    width: 592px;
+    margin: 0;
   }
 `;
 
@@ -30,5 +31,9 @@ export const FormIMG = styled(Image)`
 
   @media screen and (min-width: 768px) {
     border-radius: 60px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 592px;
   }
 `;
