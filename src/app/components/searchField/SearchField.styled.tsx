@@ -26,6 +26,12 @@ export const StyledField = styled(Field)`
     color: rgba(38, 38, 38, 0.5);
   }
 
+  :hover,
+  :focus,
+  :active {
+    border: 1px solid #f6b83d;
+  }
+
   @media screen and (min-width: 768px) {
     width: 230px;
     padding: 14px;
@@ -37,8 +43,8 @@ export const StyledField = styled(Field)`
 
 export const SearchIconBox = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 33px;
+  right: 34px;
   width: 0;
   height: 0;
   border: none;
@@ -46,6 +52,7 @@ export const SearchIconBox = styled.button`
   background-color: inherit;
 
   @media screen and (min-width: 768px) {
+    top: 16px;
   }
 `;
 
@@ -56,13 +63,14 @@ export const SearchIcon = styled(FiSearch)`
 
 export const CleanCrossBox = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 33px;
+  right: 36px;
   border: none;
   outline: none;
   background-color: inherit;
 
   @media screen and (min-width: 768px) {
+    top: 16px;
   }
 `;
 

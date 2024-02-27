@@ -48,6 +48,7 @@ export const FormBox = styled.div`
 `;
 
 export const FormText = styled.p`
+  margin-top: 12px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
@@ -57,6 +58,7 @@ export const FormText = styled.p`
   margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
+    margin-top: 16px;
     font-size: 18px;
     line-height: 1.22;
     margin-bottom: 32px;
