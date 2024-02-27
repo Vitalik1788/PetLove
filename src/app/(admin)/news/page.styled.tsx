@@ -24,3 +24,12 @@ export const Wrapper = styled.div`
     
   }
 `;
+
+export const TitleSearchBox = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+`
