@@ -40,7 +40,9 @@ export const LinksList = styled.ul`
   list-style: none;
 `;
 
-export const LinksItem = styled.li`
+export const LinksItem = styled.li``;
+
+export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,33 +51,23 @@ export const LinksItem = styled.li`
   border-radius: 30px;
   border: 1px solid rgba(38, 38, 38, 0.15);
   cursor: pointer;
-
-  &.active {
-    border: 1px solid #f6b83d;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 120px;
-    height: 50px;
-  }
-`;
-
-export const StyledLink = styled(Link)`
   font-size: 14px;
   font-weight: 500;
   color: #262626;
   text-decoration: none;
 
   @media screen and (min-width: 768px) {
+    width: 120px;
+    height: 50px;
     font-size: 16px;
-  }
+  }    
 `;
 
 export const LinksBox = styled.div`
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 0px 20px 40px;  
+  padding: 0px 20px 40px;
 `;
 
 export const ButtonList = styled.div`

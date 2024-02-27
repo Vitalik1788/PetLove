@@ -1,3 +1,4 @@
+import { usePathname } from 'next/navigation';
 import {
   ButtonList,
   CloseCross,
@@ -16,6 +17,7 @@ export interface IBurgerMenu {
 }
 
 export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
+  const pathName = usePathname();
 
   return (
     <>
@@ -29,13 +31,40 @@ export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
         <nav>
           <LinksList>
             <LinksItem>
-              <StyledLink href="/news">News</StyledLink>
+              <StyledLink
+                href="/news"
+                style={
+                  pathName === '/news'
+                    ? { border: '1px solid #f6b83d' }
+                    : { border: '1px solid rgba(38, 38, 38, 0.15)' }
+                }
+              >
+                News
+              </StyledLink>
             </LinksItem>
             <LinksItem>
-              <StyledLink href="/notices">Find pet</StyledLink>
+              <StyledLink
+                href="/notices"
+                style={
+                  pathName === '/notices'
+                    ? { border: '1px solid #f6b83d' }
+                    : { border: '1px solid rgba(38, 38, 38, 0.15)' }
+                }
+              >
+                Find pet
+              </StyledLink>
             </LinksItem>
             <LinksItem>
-              <StyledLink href="/friends">Our friends</StyledLink>
+              <StyledLink
+                href="/friends"
+                style={
+                  pathName === '/friends'
+                    ? { border: '1px solid #f6b83d' }
+                    : { border: '1px solid rgba(38, 38, 38, 0.15)' }
+                }
+              >
+                Our friends
+              </StyledLink>
             </LinksItem>
           </LinksList>
           <LinksBox>

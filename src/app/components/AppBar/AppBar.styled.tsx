@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   margin-right: auto;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  padding: 28px 20px 0px;
+  padding: 28px 0px 0px;
 
   @media screen and (max-width: 374px) {
     max-width: 335px;
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     width: 704px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
-    padding: 32px 32px 0px;
+    padding: 32px 0px 0px;
   }
 
   @media screen and (min-width: 1280px) {
