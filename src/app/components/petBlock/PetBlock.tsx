@@ -3,12 +3,13 @@ import { FormIMG, Wrapper } from './PetBlock.styled';
 
 interface IPetBlock {
   src: string | StaticImageData;
+  alt: string;
 }
 
-const PetBlock = ({ src }: IPetBlock) => {
+const PetBlock = ({ src, alt }: IPetBlock) => {
   return (
     <Wrapper>
-      <FormIMG src={src} alt="Red cat" priority={true}/>
+      <FormIMG src={src} alt={alt} priority={true}/>
     </Wrapper>
   );
 };

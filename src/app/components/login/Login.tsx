@@ -82,7 +82,7 @@ export default function LoginForm() {
 
   return (
     <Wrapper>
-      <PetBlock src={image} />
+      <PetBlock src={image} alt='Dog' />
       <FormBox>
         <Title>Log in</Title>
         <FormText>

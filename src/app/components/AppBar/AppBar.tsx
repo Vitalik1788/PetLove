@@ -2,7 +2,15 @@
 
 import { usePathname } from 'next/navigation';
 import Nav from '../Nav/Nav';
-import { AppBox, Box, BurgerMenuIcon, LogoImg, Wrapper } from './AppBar.styled';
+import {
+  AppBox,
+  Box,
+  BurgerMenuIcon,
+  LogoImg,
+  MainWrapper,
+  RestLayoutWrapper,
+  Wrapper,
+} from './AppBar.styled';
 import { useState } from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import UserBar from '../userBar/UserBar';
@@ -27,33 +35,49 @@ export default function AppBar() {
   }
 
   return (
-    <Wrapper
-      style={
-        pathName === '/'
-          ? { backgroundColor: '#f6b83d' }
-          : { backgroundColor: '#F9F9F9' }
-      }
-    >
-      <AppBox>
-        <Link href="/">
-          <LogoImg
-            src={pathName === '/' ? logo_mobile_white : logo_mobile_dark}
-            alt="petlove logo"
-            priority={true}
-          />
-        </Link>
-        <Nav />
-        <Box>
-          {isLoggedIn ? <AuthNav /> : <UserBar />}
-          <BurgerMenuIcon
-            style={
-              pathName === '/' ? { color: '#ffffff' } : { color: '#262626' }
-            }
-            onClick={openModal}
-          />
-        </Box>
-      </AppBox>
+    <>
+      {pathName === '/' ? (
+        <MainWrapper>
+          <AppBox>
+            <Link href="/">
+              <LogoImg
+                src={logo_mobile_white}
+                alt="petlove logo"
+                priority={true}
+              />
+            </Link>
+            <Nav />
+            <Box>
+              {isLoggedIn ? <AuthNav /> : <UserBar />}
+              <BurgerMenuIcon
+                style={{ color: '#ffffff' }}
+                onClick={openModal}
+              />
+            </Box>
+          </AppBox>
+        </MainWrapper>
+      ) : (
+        <RestLayoutWrapper>
+          <AppBox>
+            <Link href="/">
+              <LogoImg
+                src={logo_mobile_dark}
+                alt="petlove logo"
+                priority={true}
+              />
+            </Link>
+            <Nav />
+            <Box>
+              {isLoggedIn ? <AuthNav /> : <UserBar />}
+              <BurgerMenuIcon
+                style={{ color: '#262626' }}
+                onClick={openModal}
+              />
+            </Box>
+          </AppBox>
+        </RestLayoutWrapper>
+      )}
       <BurgerMenu menuIsOpen={menuIsOpen} closeModal={closeModal} />
-    </Wrapper>
+    </>
   );
 }

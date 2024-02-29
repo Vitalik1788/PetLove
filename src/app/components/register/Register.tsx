@@ -97,7 +97,7 @@ export default function RegisterForm() {
 
   return (
     <Wrapper>
-      <PetBlock src={image} />
+      <PetBlock src={image} alt="Red cat" />
       <FormBox>
         <Title>Registration</Title>
         <FormText>Thank you for your interest in our platform.</FormText>
