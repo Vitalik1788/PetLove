@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { MdClose } from 'react-icons/md';
 import Link from 'next/link';
 
-export const StyledMenu = styled(Modal)`
+export const MainStyledMenu = styled(Modal)`
   position: relative;
   height: 100%;
   width: 218px;
@@ -16,6 +16,20 @@ export const StyledMenu = styled(Modal)`
     width: 374px;
   }
 `;
+
+export const SecondStyledMenu = styled(Modal)`
+  position: relative;
+  height: 100%;
+  width: 218px;
+  margin-left: auto;
+  background-color: #F6B83D;
+  outline: none;
+
+  @media screen and (min-width: 768px) {
+    width: 374px;
+  }
+`; 
+
 
 export const CloseCross = styled(MdClose)`
   position: absolute;
