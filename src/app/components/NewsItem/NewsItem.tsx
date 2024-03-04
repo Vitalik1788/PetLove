@@ -3,7 +3,6 @@ import {
   CardImage,
   CardText,
   CardTitle,
-  Container,
   DateCardBox,
   ReadMore,
 } from './NewsItem.styled';

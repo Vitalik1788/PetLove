@@ -3,7 +3,7 @@ import { getAllNews } from '@/redux/news/newsOperation';
 import { selectAllNews } from '@/redux/news/newsSelectors';
 import { useEffect } from 'react';
 import NewsItem from '../NewsItem/NewsItem';
-import { StyledItem, StyledList } from './NewsList.styled';
+import { Container, StyledItem, StyledList } from './NewsList.styled';
 
 export default function NewsList() {
   const dispatch = useAppDispatch();
@@ -14,7 +14,7 @@ export default function NewsList() {
   }, [dispatch]);
 
   return (
-    <div>
+    <Container>
       <StyledList>
         {allNews.length !== 0 &&
           allNews.map((news: any) => {
@@ -25,6 +25,6 @@ export default function NewsList() {
             );
           })}
       </StyledList>
-    </div>
+    </Container>
   );
 }
