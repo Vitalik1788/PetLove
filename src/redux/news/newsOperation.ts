@@ -8,7 +8,7 @@ export const getAllNews = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/news');
-      return response.data;
+      return response.data.results;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

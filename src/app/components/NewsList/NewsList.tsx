@@ -1,12 +1,30 @@
-import { useAppDispatch } from "@/app/hooks/hooks";
-import { getAllNews } from "@/redux/news/newsOperation";
-
+import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
+import { getAllNews } from '@/redux/news/newsOperation';
+import { selectAllNews } from '@/redux/news/newsSelectors';
+import { useEffect } from 'react';
+import NewsItem from '../NewsItem/NewsItem';
+import { StyledItem, StyledList } from './NewsList.styled';
 
 export default function NewsList() {
+  const dispatch = useAppDispatch();
+  const allNews = useAppSelector(selectAllNews);
 
- 
+  useEffect(() => {
+    dispatch(getAllNews());
+  }, [dispatch]);
 
-  return <div>
-    <button onClick={useAppDispatch(getAllNews())} type="button">click me</button>
-  </div>;
+  return (
+    <div>
+      <StyledList>
+        {allNews.length !== 0 &&
+          allNews.map((news: any) => {
+            return (
+              <StyledItem key={news._id}>
+                <NewsItem data={news} />
+              </StyledItem>
+            );
+          })}
+      </StyledList>
+    </div>
+  );
 }
