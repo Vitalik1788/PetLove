@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { newsReducer } from './news/newsReducer';
+import { friendsReducer } from './friends/friendsReducer';
 
 
 export const store = configureStore({
   reducer: {
     news: newsReducer,
+    friends: friendsReducer,
   } 
 });
 

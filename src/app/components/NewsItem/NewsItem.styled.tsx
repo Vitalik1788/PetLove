@@ -89,6 +89,7 @@ export const ReadMore = styled.a`
   letter-spacing: -0.02em;
   text-align: left;
   color: #f6b83d;
+  text-decoration: underline;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

@@ -7,12 +7,14 @@ import NewsList from '@/app/components/NewsList/NewsList';
 
 export default function News() {
   return (
-    <Wrapper>
-      <TitleSearchBox>
-        <Title>News</Title>
-        <SearchField />
-      </TitleSearchBox>
-      <NewsList />
-    </Wrapper>
+    <div style={{ padding: '0px 20px' }}>
+      <Wrapper>
+        <TitleSearchBox>
+          <Title>News</Title>
+          <SearchField />
+        </TitleSearchBox>
+        <NewsList />
+      </Wrapper>
+    </div>
   );
 }

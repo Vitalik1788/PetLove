@@ -2,11 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getAllNews } from './newsOperation';
 
 interface INewsSlice {
-  news: Array<object>;
+  news: Array<object>;  
+  isLoading: boolean;
 }
 
 const initialState: INewsSlice = {
   news: [],
+  isLoading: false,
 };
 
 const NewsSlice = createSlice({
