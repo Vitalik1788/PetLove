@@ -7,6 +7,10 @@ export const LinksBox = styled.div`
   @media screen and (max-width: 767px) {
     display: none;
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 0;
+  }
 `;
 
 export const LinkToLogIn = styled(Link)`
