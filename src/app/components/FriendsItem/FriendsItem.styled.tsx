@@ -38,8 +38,13 @@ export const CompanyList = styled.li`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
   :not(:last-child) {
     margin-bottom: 8px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 300px;
   }
 `;
 
