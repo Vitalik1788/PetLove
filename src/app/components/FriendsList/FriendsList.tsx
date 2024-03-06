@@ -3,28 +3,28 @@ import { getFriends } from '@/redux/friends/friendsOperation';
 import { selectFriends } from '@/redux/friends/friendsSelectors';
 import { useEffect } from 'react';
 import FriendsItem from '../FriendsItem/FriendsItem';
-
+import { ItemFriend, ListFriends } from './FriendsList.styled';
 
 export default function FriendsList() {
   const dispatch = useAppDispatch();
   const friends = useAppSelector(selectFriends);
-  
+
   useEffect(() => {
     dispatch(getFriends());
   }, [dispatch]);
 
   return (
     <div>
-      <ul>
+      <ListFriends>
         {friends.length !== 0 &&
           friends.map((friend: any) => {
             return (
-              <li key={friend._id}>
+              <ItemFriend key={friend._id}>
                 <FriendsItem data={friend} />
-              </li>
+              </ItemFriend>
             );
           })}
-      </ul>
+      </ListFriends>
     </div>
   );
 }
