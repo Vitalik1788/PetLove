@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { signIn, signUp } from './authOperations';
 
 interface IAuthSlice {
   isLoading: boolean;
@@ -31,7 +32,34 @@ const AuthSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder;
+    builder
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.user.email = action.payload.email;
+        state.user.name = action.payload.name;
+        state.token = action.payload.token;
+        state.isLoggedin = true;
+        state.isLoading = false;
+      })
+      .addCase(signUp.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(signUp.rejected, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(signIn.fulfilled, (state, action) => {
+        state.user.email = action.payload.email;
+        state.user.name = action.payload.name;
+
+        state.token = action.payload.token;
+        state.isLoggedin = true;
+        state.isLoading = false;
+      })
+      .addCase(signIn.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(signIn.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 

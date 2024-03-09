@@ -9,7 +9,6 @@ import {
   LogoImg,
   MainWrapper,
   RestLayoutWrapper,
-  Wrapper,
 } from './AppBar.styled';
 import { useState } from 'react';
 import AuthNav from '../AuthNav/AuthNav';
@@ -18,10 +17,12 @@ import BurgerMenu from '../burgerMenu/BurgerMenu';
 import logo_mobile_white from '../../assets/images/logo_mobile_white2x.png';
 import logo_mobile_dark from '../../assets/images/logo_mobile_dark2x.png';
 import Link from 'next/link';
+import { useAppSelector } from '@/app/hooks/hooks';
+import { selectIsLoggedin } from '@/redux/auth/authSelectors';
 
 export default function AppBar() {
   const pathName = usePathname();
-  const isLoggedIn = useState(false);
+  const isLoggedIn = useAppSelector(selectIsLoggedin);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   function openModal() {
@@ -48,7 +49,7 @@ export default function AppBar() {
             </Link>
             <Nav />
             <Box>
-              {isLoggedIn ? <AuthNav /> : <UserBar />}
+              {!isLoggedIn ? <AuthNav /> : <UserBar />}
               <BurgerMenuIcon
                 style={{ color: '#ffffff' }}
                 onClick={openModal}
@@ -68,7 +69,7 @@ export default function AppBar() {
             </Link>
             <Nav />
             <Box>
-              {isLoggedIn ? <AuthNav /> : <UserBar />}
+              {!isLoggedIn ? <AuthNav /> : <UserBar />}
               <BurgerMenuIcon
                 style={{ color: '#262626' }}
                 onClick={openModal}

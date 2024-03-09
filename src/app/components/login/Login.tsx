@@ -25,6 +25,10 @@ import { Form, Formik } from 'formik';
 import dog_mobile from '../../assets/images/login_mobile_dog.jpg';
 import dog_tablet from '../../assets/images/tablet_dog_login.jpg';
 import dog_desktop from '../../assets/images/desktop_dog_login.jpg';
+import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
+import { signIn } from '@/redux/auth/authOperations';
+import { selectIsLoggedin, selectToken } from '@/redux/auth/authSelectors';
+import { useRouter } from 'next/navigation';
 
 interface ILoginForm {
   email: string;
@@ -49,6 +53,9 @@ export default function LoginForm() {
   const [passwordIsOpen, setPasswordIsOpen] = useState(false);
   const [image, setImage] = useState(dog_mobile);
   const size = useWindowSize();
+  const dispatch = useAppDispatch();
+  const isLoggedin = useAppSelector(selectIsLoggedin);
+  const router = useRouter();
 
   useEffect(() => {
     function getImageBySize() {
@@ -62,6 +69,12 @@ export default function LoginForm() {
     }
     getImageBySize();
   }, [size]);
+
+  useEffect(() => {
+    if (isLoggedin) {
+      router.push('/profile');
+    }
+  }, [isLoggedin, router]);
 
   function togglePassword() {
     if (passwordIsOpen) {
@@ -77,12 +90,18 @@ export default function LoginForm() {
   };
 
   function handleSubmit(values: ILoginForm) {
-    console.log(values);
+    if (values) {
+      const user = {
+        email: values.email,
+        password: values.password,
+      };
+      dispatch(signIn(user));
+    }
   }
 
   return (
     <Wrapper>
-      <PetBlock src={image} alt='Dog' />
+      <PetBlock src={image} alt="Dog" />
       <FormBox>
         <Title>Log in</Title>
         <FormText>
@@ -103,6 +122,7 @@ export default function LoginForm() {
                       name="email"
                       type="email"
                       placeholder="Email"
+                      value={values.email}
                       style={
                         errors.email
                           ? { border: '1px solid #EF2447' }
@@ -132,6 +152,7 @@ export default function LoginForm() {
                       name="password"
                       type={passwordIsOpen ? 'text' : 'password'}
                       placeholder="Password"
+                      value={values.password}
                       style={
                         errors.password
                           ? { border: '1px solid #EF2447' }

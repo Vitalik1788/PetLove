@@ -23,7 +23,11 @@ import PetBlock from '../petBlock/PetBlock';
 import { useEffect, useState } from 'react';
 import useWindowSize from '@/app/hooks/useWindowSize';
 import tablet_cat from '../../assets/images/tablet_register_cat.jpg';
-import desktop_cat from "../../assets/images/desktop_cat_reg.jpg";
+import desktop_cat from '../../assets/images/desktop_cat_reg.jpg';
+import { useAppDispatch } from '@/app/hooks/hooks';
+import { signUp } from '@/redux/auth/authOperations';
+import { AppDispatch } from '@/redux/store';
+import { useDispatch } from 'react-redux';
 
 interface IRegisterForm {
   name: string;
@@ -58,14 +62,15 @@ export default function RegisterForm() {
   const [passwordIsOpen, setPasswordIsOpen] = useState(false);
   const [image, setImage] = useState(cat_mobile);
   const size = useWindowSize();
-
-  useEffect(() => {
+  const dispatch = useAppDispatch();
+    
+    useEffect(() => {
     function getImageBySize() {
       if (size < 768) {
         setImage(cat_mobile);
       } else if (size >= 768 && size < 1280) {
         setImage(tablet_cat);
-      } else if (size >=1280) {
+      } else if (size >= 1280) {
         setImage(desktop_cat);
       }
     }
@@ -92,7 +97,14 @@ export default function RegisterForm() {
       alert('Password is not confirmed');
       return;
     }
-    console.log(values);
+    if (values) {
+      const user = {
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      };
+      dispatch(signUp(user));
+    }
   }
 
   return (

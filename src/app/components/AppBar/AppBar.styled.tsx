@@ -70,6 +70,8 @@ export const AppBox = styled.div`
 `;
 
 export const LogoImg = styled(Image)`
+  padding-top: 10px;
+  padding-bottom: 10px;
   max-width: 76px;
   height: auto;
 
@@ -84,11 +86,11 @@ export const Box = styled.div`
 `;
 
 export const BurgerMenuIcon = styled(FiMenu)`
-  width: 24px;
+  width: 32px;
   height: auto;
 
   @media screen and (min-width: 768px) {
-    width: 30px;
+    width: 36px;
   }
 
   @media screen and (min-width: 1280px) {
