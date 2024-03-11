@@ -34,19 +34,19 @@ export const UserName = styled.p`
 export const LogoutBtn = styled.button`
   display: none;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 768px) {
     display: block;
     margin-right: 8px;
     padding: 15px 35px;
     border-radius: 30px;
     font-size: 16px;
     font-weight: 700;
-    line-height: 20px;
     letter-spacing: -0.03em;
     text-align: left;
     color: #ffffff;
     background-color: #f6b83d;
     outline: none;
     border: transparent;
+    cursor: pointer;
   }
 `;

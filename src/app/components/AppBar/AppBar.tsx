@@ -10,20 +10,23 @@ import {
   MainWrapper,
   RestLayoutWrapper,
 } from './AppBar.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import UserBar from '../userBar/UserBar';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 import logo_mobile_white from '../../assets/images/logo_mobile_white2x.png';
 import logo_mobile_dark from '../../assets/images/logo_mobile_dark2x.png';
 import Link from 'next/link';
-import { useAppSelector } from '@/app/hooks/hooks';
-import { selectIsLoggedin } from '@/redux/auth/authSelectors';
+import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
+import { selectIsLoggedin, selectRefresh } from '@/redux/auth/authSelectors';
+import { userRefresh } from '@/redux/auth/authOperations';
 
 export default function AppBar() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const pathName = usePathname();
   const isLoggedIn = useAppSelector(selectIsLoggedin);
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const isRefreshing = useAppSelector(selectRefresh);
+  const dispatch = useAppDispatch();
 
   function openModal() {
     setMenuIsOpen(true);
@@ -35,8 +38,12 @@ export default function AppBar() {
     document.body.style.overflowY = 'unset';
   }
 
+  useEffect(() => {
+    dispatch(userRefresh());
+  }, [dispatch]);
+
   return (
-    <>
+    !isRefreshing && (<>
       {pathName === '/' ? (
         <MainWrapper>
           <AppBox>
@@ -79,6 +86,6 @@ export default function AppBar() {
         </RestLayoutWrapper>
       )}
       <BurgerMenu menuIsOpen={menuIsOpen} closeModal={closeModal} />
-    </>
+    </>)   
   );
 }

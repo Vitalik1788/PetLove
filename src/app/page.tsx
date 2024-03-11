@@ -5,6 +5,7 @@ import HomeHero from './components/homeHero/HomeHero';
 import { PageBox } from './page.styled';
 
 export default function Home() {
+  
   return (
     <main>
       <PageBox>

@@ -22,14 +22,13 @@ export const SecondStyledMenu = styled(Modal)`
   height: 100%;
   width: 218px;
   margin-left: auto;
-  background-color: #F6B83D;
+  background-color: #f6b83d;
   outline: none;
 
   @media screen and (min-width: 768px) {
     width: 374px;
   }
-`; 
-
+`;
 
 export const CloseCross = styled(MdClose)`
   position: absolute;
@@ -74,7 +73,7 @@ export const StyledLink = styled(Link)`
     width: 120px;
     height: 50px;
     font-size: 16px;
-  }    
+  }
 `;
 
 export const LinksBox = styled.div`
@@ -98,7 +97,6 @@ export const LinkLogIn = styled(Link)`
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 700;
-  line-height: 1.29;
   letter-spacing: -0.03em;
   text-decoration: none;
   text-align: center;
@@ -118,13 +116,32 @@ export const LinkReg = styled(Link)`
   padding: 12px 0;
   font-size: 14px;
   font-weight: 700;
-  line-height: 1.29;
   letter-spacing: -0.03em;
   text-align: center;
   text-decoration: none;
   border-radius: 30px;
   color: #f6b83d;
   background-color: #fff4df;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+`;
+
+export const LogoutBtn = styled.button`
+  display: block;
+  width: 100%;
+  padding: 12px 60px;
+  background-color: #fff4df;
+  outline: none;
+  border: transparent;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  white-space: nowrap;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

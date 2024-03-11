@@ -7,10 +7,14 @@ import {
   LinksBox,
   LinksItem,
   LinksList,
+  LogoutBtn,
   MainStyledMenu,
   SecondStyledMenu,
   StyledLink,
 } from './BurgerMenu.styled';
+import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
+import { selectIsLoggedin } from '@/redux/auth/authSelectors';
+import { logout } from '@/redux/auth/authOperations';
 
 export interface IBurgerMenu {
   menuIsOpen: boolean;
@@ -20,6 +24,8 @@ export interface IBurgerMenu {
 export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
   const pathName = usePathname();
   const activeUserPage = usePathname();
+  const isLoggedin = useAppSelector(selectIsLoggedin);
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -71,10 +77,16 @@ export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
               </LinksItem>
             </LinksList>
             <LinksBox>
-              <ButtonList>
-                <LinkLogIn href="/login">LOG IN</LinkLogIn>
-                <LinkReg href="/register">REGISTRATION</LinkReg>
-              </ButtonList>
+              {isLoggedin ? (
+                <LogoutBtn onClick={() => dispatch(logout())}>
+                  LOG OUT
+                </LogoutBtn>
+              ) : (
+                <ButtonList>
+                  <LinkLogIn href="/login">LOG IN</LinkLogIn>
+                  <LinkReg href="/register">REGISTRATION</LinkReg>
+                </ButtonList>
+              )}
             </LinksBox>
           </nav>
         </MainStyledMenu>
@@ -144,15 +156,21 @@ export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
               </LinksItem>
             </LinksList>
             <LinksBox>
-              <ButtonList>
-                <LinkLogIn
-                  style={{ border: '1px solid rgba(255, 255, 255, 0.5)' }}
-                  href="/login"
-                >
-                  LOG IN
-                </LinkLogIn>
-                <LinkReg href="/register">REGISTRATION</LinkReg>
-              </ButtonList>
+              {isLoggedin ? (
+                <LogoutBtn onClick={() => dispatch(logout())}>
+                  LOG OUT
+                </LogoutBtn>
+              ) : (
+                <ButtonList>
+                  <LinkLogIn
+                    style={{ border: '1px solid rgba(255, 255, 255, 0.5)' }}
+                    href="/login"
+                  >
+                    LOG IN
+                  </LinkLogIn>
+                  <LinkReg href="/register">REGISTRATION</LinkReg>
+                </ButtonList>
+              )}
             </LinksBox>
           </nav>
         </SecondStyledMenu>

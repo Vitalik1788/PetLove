@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signIn, signUp } from './authOperations';
+import { logout, signIn, signUp, userRefresh } from './authOperations';
 
 interface IAuthSlice {
   isLoading: boolean;
   isLoggedin: boolean;
   isRefreshing: boolean;
-  token: string;
+  token: string | null;
   user: {
     name: string;
     email: string;
@@ -58,6 +58,31 @@ const AuthSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(signIn.rejected, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(userRefresh.pending, (state) => {
+        state.isRefreshing = true;
+      })
+      .addCase(userRefresh.fulfilled, (state, action) => {
+        state.user.email = action.payload.email;
+        state.user.name = action.payload.name;
+        state.isRefreshing = false;
+        state.isLoggedin = true;
+      })
+      .addCase(userRefresh.rejected, (state) => {
+        state.isRefreshing = false;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.user.name = '';
+        state.user.email = '';
+        state.isLoggedin = false;
+        state.token = null;
+        state.isLoading = false;
+      })
+      .addCase(logout.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(logout.rejected, (state) => {
         state.isLoading = false;
       });
   },

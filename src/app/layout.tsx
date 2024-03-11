@@ -8,7 +8,6 @@ import { Box } from './layout.styled';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 
-
 const FONT = Manrope({ subsets: ['latin'] });
 
 export default function RootLayout({

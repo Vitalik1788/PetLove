@@ -24,10 +24,12 @@ import { useEffect, useState } from 'react';
 import useWindowSize from '@/app/hooks/useWindowSize';
 import tablet_cat from '../../assets/images/tablet_register_cat.jpg';
 import desktop_cat from '../../assets/images/desktop_cat_reg.jpg';
-import { useAppDispatch } from '@/app/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
 import { signUp } from '@/redux/auth/authOperations';
 import { AppDispatch } from '@/redux/store';
 import { useDispatch } from 'react-redux';
+import { selectIsLoggedin } from '@/redux/auth/authSelectors';
+import { useRouter } from 'next/navigation';
 
 interface IRegisterForm {
   name: string;
@@ -63,6 +65,10 @@ export default function RegisterForm() {
   const [image, setImage] = useState(cat_mobile);
   const size = useWindowSize();
   const dispatch = useAppDispatch();
+  const isLoggedin = useAppSelector(selectIsLoggedin);
+    const router = useRouter();
+
+
     
     useEffect(() => {
     function getImageBySize() {
@@ -75,7 +81,13 @@ export default function RegisterForm() {
       }
     }
     getImageBySize();
-  }, [size]);
+    }, [size]);
+  
+  useEffect(() => {
+    if (isLoggedin) {
+      router.push('/profile');
+    }
+  }, [isLoggedin, router]);
 
   function togglePassword() {
     if (passwordIsOpen) {

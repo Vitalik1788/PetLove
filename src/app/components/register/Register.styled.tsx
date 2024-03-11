@@ -174,6 +174,7 @@ export const Button = styled.button`
   font-weight: 700;
   color: #ffffff;
   text-align: center;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     margin-top: 16px;
