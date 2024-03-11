@@ -12,20 +12,28 @@ import {
   SecondStyledMenu,
   StyledLink,
 } from './BurgerMenu.styled';
-import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
+import { useAppSelector } from '@/app/hooks/hooks';
 import { selectIsLoggedin } from '@/redux/auth/authSelectors';
-import { logout } from '@/redux/auth/authOperations';
 
 export interface IBurgerMenu {
   menuIsOpen: boolean;
   closeModal: () => void;
+  openApproveModal: () => void;
 }
 
-export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
+export default function BurgerMenu({
+  menuIsOpen,
+  closeModal,
+  openApproveModal,
+}: IBurgerMenu) {
   const pathName = usePathname();
   const activeUserPage = usePathname();
   const isLoggedin = useAppSelector(selectIsLoggedin);
-  const dispatch = useAppDispatch();
+
+  function modalUsage() {
+    closeModal();
+    openApproveModal();
+  }
 
   return (
     <>
@@ -78,9 +86,7 @@ export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
             </LinksList>
             <LinksBox>
               {isLoggedin ? (
-                <LogoutBtn onClick={() => dispatch(logout())}>
-                  LOG OUT
-                </LogoutBtn>
+                <LogoutBtn onClick={modalUsage}>LOG OUT</LogoutBtn>
               ) : (
                 <ButtonList>
                   <LinkLogIn href="/login">LOG IN</LinkLogIn>
@@ -157,9 +163,7 @@ export default function BurgerMenu({ menuIsOpen, closeModal }: IBurgerMenu) {
             </LinksList>
             <LinksBox>
               {isLoggedin ? (
-                <LogoutBtn onClick={() => dispatch(logout())}>
-                  LOG OUT
-                </LogoutBtn>
+                <LogoutBtn onClick={modalUsage}>LOG OUT</LogoutBtn>
               ) : (
                 <ButtonList>
                   <LinkLogIn

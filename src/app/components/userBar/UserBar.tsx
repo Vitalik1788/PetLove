@@ -2,25 +2,15 @@ import { usePathname, useRouter } from 'next/navigation';
 import { Box, LogoutBtn, StyledSVG, UserName } from './UserBar.styled';
 import { useAppSelector } from '@/app/hooks/hooks';
 import { selectUser } from '@/redux/auth/authSelectors';
-import { useState } from 'react';
-import ModalApproveAction from '../ModalApproveAction/ModalApproveAction';
 
-export default function UserBar() {
-  const [approveModalOpen, setApproveModalOpen] = useState(false);
+interface IUserbar {
+  openApproveModal: () => void;
+}
+
+export default function UserBar({ openApproveModal }: IUserbar) {
   const path = usePathname();
   const router = useRouter();
   const user = useAppSelector(selectUser);
-
-  function openApproveModal() {
-    setApproveModalOpen(true);
-    document.body.style.overflowY = 'hidden';
-  }
-
-  function closeApproveModal() {
-    setApproveModalOpen(false);
-    document.body.style.overflowY = 'unset';
-  }
-
 
   return path === '/' ? (
     <>
@@ -40,11 +30,7 @@ export default function UserBar() {
           </StyledSVG>
           <UserName>{user.name}</UserName>
         </div>
-      </Box>
-      <ModalApproveAction
-        approveModalOpen={approveModalOpen}
-        closeApproveModal={closeApproveModal}
-      />
+      </Box>      
     </>
   ) : (
     <>
@@ -59,11 +45,7 @@ export default function UserBar() {
           </StyledSVG>
           <UserName style={{ color: '#262626' }}>{user.name}</UserName>
         </div>
-      </Box>
-      <ModalApproveAction
-        approveModalOpen={approveModalOpen}
-        closeApproveModal={closeApproveModal}
-      />
+      </Box>      
     </>
   );
 }
