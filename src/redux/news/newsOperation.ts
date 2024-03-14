@@ -7,8 +7,8 @@ export const getAllNews = createAsyncThunk(
   'news/getAllNews',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/news');
-      return response.data.results;
+      const response = await axios.get(`/news?limit=1100`);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
