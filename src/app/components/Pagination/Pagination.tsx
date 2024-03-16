@@ -8,26 +8,29 @@ import {
 } from 'react-icons/fa6';
 
 export default function Pagination({
-  pageCount,
   handlePageClick,
+  totalPages,
   itemOffset,
+  setItemOffset,
 }: any) {
   return (
     <div className={css.component_box}>
       <button
+        onClick={() => setItemOffset(1)}
         type="button"
         className={css.start_angle}
-        disabled={itemOffset === 0}
+        disabled={itemOffset === 1}
       >
         <FaAnglesLeft width={20} height={20} />
       </button>
       <ReactPaginate
+        initialPage={itemOffset - 1}
+        pageRangeDisplayed={2}
         breakLabel="..."
-        pageCount={pageCount}
+        pageCount={totalPages}
         onPageChange={handlePageClick}
         previousLabel={<FaAngleLeft />}
         nextLabel={<FaAngleRight />}
-        renderOnZeroPageCount={null}
         marginPagesDisplayed={0}
         disableInitialCallback={true}
         containerClassName={css.container}
@@ -41,7 +44,12 @@ export default function Pagination({
         previousLinkClassName={css.previousLinkClassName}
         nextLinkClassName={css.nextLinkClassName}
       />
-      <button type="button" className={css.end_angle}>
+      <button
+        onClick={() => setItemOffset(totalPages)}
+        type="button"
+        className={css.end_angle}
+        disabled={itemOffset === totalPages}
+      >
         <FaAnglesRight width={20} height={20} />
       </button>
     </div>

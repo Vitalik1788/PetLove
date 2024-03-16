@@ -22,6 +22,7 @@
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
   background-color: transparent;
+  cursor: pointer;
 }
 
 .end_angle {
@@ -34,6 +35,7 @@
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
   background-color: transparent;
+  cursor: pointer;
 }
 
 .item_style {
@@ -47,6 +49,7 @@
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .breakClassName {
@@ -71,6 +74,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
+  cursor: pointer;
 }
 
 .activeClassName {
@@ -86,6 +90,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
+  cursor: pointer;
 }
 
 .disabledClassName {
