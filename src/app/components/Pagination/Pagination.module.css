@@ -1,4 +1,5 @@
 .component_box {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 44px;
@@ -12,30 +13,27 @@
   gap: 10px;
 }
 
-.start_angle {
+.start_angle,
+.end_angle {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 40px;
-  min-height: 40px;
+  width: 40px;
+  height: 40px;
   margin-right: 8px;
+  margin-left: 8px;
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
   background-color: transparent;
   cursor: pointer;
 }
 
-.end_angle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 40px;
-  min-height: 40px;
-  margin-left: 8px;
-  border-radius: 50%;
-  border: 1px solid rgba(38, 38, 38, 0.2);
-  background-color: transparent;
-  cursor: pointer;
+@media screen and (min-width: 768px) {
+  .start_angle,
+  .end_angle {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .item_style {
@@ -52,6 +50,14 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 768px) {
+  .item_style {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
 .breakClassName {
   display: flex;
   justify-content: center;
@@ -66,22 +72,15 @@
   color: #262626;
 }
 
-.previousClassName {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(38, 38, 38, 0.2);
-  cursor: pointer;
+@media screen and (min-width: 768px) {
+  .breakClassName {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
 }
 
-.activeClassName {
-  background-color: rgba(246, 184, 61, 1);
-  color: #ffffff;
-}
-
+.previousClassName,
 .nextClassName {
   display: flex;
   justify-content: center;
@@ -91,6 +90,19 @@
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .previousClassName,
+  .nextClassName {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.activeClassName {
+  background-color: rgba(246, 184, 61, 1);
+  color: #ffffff;
 }
 
 .disabledClassName {
