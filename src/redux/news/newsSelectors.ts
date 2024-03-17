@@ -16,14 +16,12 @@ export const selectVisibleNews = (state: RootState) => {
   const allNews = selectAllNews(state);
   const news = selectNews(state);
   const filter = selectSearchFilter(state)?.toLowerCase().trim();
+  
 
-  if (!allNews) {
-    return;
-  }
-
-  if (filter === '' && filter === undefined) {
+  if (filter === '' || filter === undefined) {
     return news;
+  } else  {
+    return allNews.filter((el: any) => el.title.toLowerCase().includes(filter));
   }
 
-  return allNews.filter((el: any) => el.title.toLowerCase().includes(filter));
 };
