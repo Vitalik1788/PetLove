@@ -1,10 +1,9 @@
 import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
-import { getAllNews, getNews } from '@/redux/news/newsOperation';
+import { getNews } from '@/redux/news/newsOperation';
 import {
   selectNews,
   selectIsLoading,
   selectTotalPages,
-  selectVisibleNews,
   selectSearchFilter,
 } from '@/redux/news/newsSelectors';
 import { useEffect, useState } from 'react';
@@ -19,7 +18,6 @@ export default function NewsList() {
   const isLoading = useAppSelector(selectIsLoading);
   const totalPages = useAppSelector(selectTotalPages);
   const filterValue = useAppSelector(selectSearchFilter);
-  // const visibleNews = useAppSelector(selectVisibleNews);
 
   useEffect(() => {
     const credentials = {
@@ -28,11 +26,7 @@ export default function NewsList() {
     }
     dispatch(getNews(credentials));
   }, [dispatch, filterValue, itemOffset]);
-
-  // useEffect(() => {
-  //   const limit = totalPages * 6;
-  //   dispatch(getAllNews(limit));
-  // }, [dispatch, totalPages]);  
+  
 
   const handlePageClick = (event: any) => {
     const pageCount = event.selected + 1;

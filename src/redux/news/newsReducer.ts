@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllNews, getNews, setFilterValue } from './newsOperation';
+import { getNews, setFilterValue } from './newsOperation';
 
 interface INewsSlice {
   news: Array<object>;
-  allNews: Array<object>;
   isLoading: boolean;
   perPage: number;
   totalPages: number;
@@ -12,7 +11,6 @@ interface INewsSlice {
 
 const initialState: INewsSlice = {
   news: [],
-  allNews: [],
   isLoading: false,
   perPage: 0,
   totalPages: 0,
@@ -24,14 +22,7 @@ const NewsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(getAllNews.fulfilled, (state, action) => {
-        state.allNews = action.payload.results;
-        state.isLoading = false;
-      })
-      .addCase(getAllNews.pending, (state) => {
-        state.isLoading = true;
-      })
+    builder      
       .addCase(getNews.fulfilled, (state, action) => {
         state.news = action.payload.results;
         state.perPage = action.payload.perPage;

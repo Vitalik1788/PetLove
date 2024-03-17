@@ -22,7 +22,7 @@ const initialState: IAuthSlice = {
   user: {
     name: '',
     email: '',
-    phone: '+380',
+    phone: '',
     avatar: '',
   },
 };

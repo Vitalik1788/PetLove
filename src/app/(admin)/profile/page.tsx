@@ -1,3 +1,4 @@
+import UserCard from "@/app/components/UserCard/UserCard";
 
 
 
@@ -5,6 +6,8 @@ export default function Profile() {
   
 
   return (
-    <div></div>
+    <div>
+      <UserCard />
+    </div>
   )
 };
