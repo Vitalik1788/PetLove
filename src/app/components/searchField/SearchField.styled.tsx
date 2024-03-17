@@ -50,6 +50,7 @@ export const SearchIconBox = styled.button`
   border: none;
   outline: none;
   background-color: inherit;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     top: 16px;
@@ -68,6 +69,7 @@ export const CleanCrossBox = styled.button`
   border: none;
   outline: none;
   background-color: inherit;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     top: 16px;

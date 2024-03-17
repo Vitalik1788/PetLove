@@ -1,11 +1,12 @@
 import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
-import { getAllNews } from '@/redux/news/newsOperation';
+import { getAllNews, getNews } from '@/redux/news/newsOperation';
 import {
-  selectAllNews,
+  selectNews,
   selectIsLoading,
   selectTotalPages,
+  selectVisibleNews,
 } from '@/redux/news/newsSelectors';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import NewsItem from '../NewsItem/NewsItem';
 import { Container, StyledItem, StyledList } from './NewsList.styled';
 import Pagination from '../Pagination/Pagination';
@@ -13,13 +14,19 @@ import Pagination from '../Pagination/Pagination';
 export default function NewsList() {
   const [itemOffset, setItemOffset] = useState(1);
   const dispatch = useAppDispatch();
-  const allNews = useAppSelector(selectAllNews);
+  const news = useAppSelector(selectNews);
   const isLoading = useAppSelector(selectIsLoading);
   const totalPages = useAppSelector(selectTotalPages);
+  const visibleNews = useAppSelector(selectVisibleNews);
 
   useEffect(() => {
-    dispatch(getAllNews(itemOffset));
+    dispatch(getNews(itemOffset));
   }, [dispatch, itemOffset]);
+
+  useEffect(() => {
+    const limit = totalPages * 6;
+    dispatch(getAllNews(limit));
+  }, [dispatch, totalPages]);  
 
   const handlePageClick = (event: any) => {
     const pageCount = event.selected + 1;
@@ -30,8 +37,8 @@ export default function NewsList() {
     !isLoading && (
       <Container>
         <StyledList>
-          {allNews.length !== 0 &&
-            allNews.map((news: any) => {
+          {visibleNews.length !== 0 &&
+            visibleNews.map((news: any) => {
               return (
                 <StyledItem key={news._id}>
                   <NewsItem data={news} />

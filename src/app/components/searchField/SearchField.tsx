@@ -8,19 +8,23 @@ import {
   SearchIconBox,
   StyledField,
 } from './SearchField.styled';
+import { useAppDispatch } from '@/app/hooks/hooks';
+import { setFilterValue } from '@/redux/news/newsOperation';
 
 interface ISearchField {
   text: string;
 }
 
 export default function SearchField() {
+  const dispatch = useAppDispatch();
+
   const initialState: ISearchField = {
     text: '',
   };
 
   function handleSubmit(values: ISearchField) {
     if (values.text !== '') {
-      console.log(values);      
+      dispatch(setFilterValue(values.text)); 
     }
   }
 
@@ -42,7 +46,7 @@ export default function SearchField() {
             <SearchIconBox type="submit">
               <SearchIcon />
             </SearchIconBox>
-            <CleanCrossBox type="reset">
+            <CleanCrossBox type="reset" onClick={() => dispatch(setFilterValue(''))}>
               <CleanCrossIcon>
                 <use
                   href={
