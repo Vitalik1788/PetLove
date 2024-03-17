@@ -15,11 +15,16 @@ export const getAllNews = createAsyncThunk(
   }
 );
 
+interface IgetNews {
+  filter: string | undefined;
+  page: number;
+}
+
 export const getNews = createAsyncThunk(
   'news/getNews',
-  async (data: number, thunkAPI) => {
+  async (data: IgetNews, thunkAPI) => {
     try {
-      const response = await axios.get(`/news?page=${data}`);
+      const response = await axios.get(`/news?keyword=${data.filter? data.filter : ""}&page=${data.page}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
