@@ -76,3 +76,14 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
+export const getFullCurrentUser = createAsyncThunk(
+  'auth/getFullUser',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/users/current/full');
+      return response.data;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

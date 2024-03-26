@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { logout, signIn, signUp, userRefresh } from './authOperations';
+import { getFullCurrentUser, logout, signIn, signUp, userRefresh } from './authOperations';
 
 interface IAuthSlice {
   isLoading: boolean;
@@ -33,6 +33,19 @@ const AuthSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(getFullCurrentUser.fulfilled, (state, action) => {
+        state.user.name = action.payload.name;
+        state.user.email = action.payload.email;
+        state.user.phone = action.payload.phone;
+        state.user.avatar = action.payload.avatar;
+        state.isLoading = false;
+      })
+      .addCase(getFullCurrentUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getFullCurrentUser.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(signUp.fulfilled, (state, action) => {
         state.user.email = action.payload.email;
         state.user.name = action.payload.name;

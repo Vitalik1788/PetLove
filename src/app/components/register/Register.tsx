@@ -66,11 +66,9 @@ export default function RegisterForm() {
   const size = useWindowSize();
   const dispatch = useAppDispatch();
   const isLoggedin = useAppSelector(selectIsLoggedin);
-    const router = useRouter();
+  const router = useRouter();
 
-
-    
-    useEffect(() => {
+  useEffect(() => {
     function getImageBySize() {
       if (size < 768) {
         setImage(cat_mobile);
@@ -81,8 +79,8 @@ export default function RegisterForm() {
       }
     }
     getImageBySize();
-    }, [size]);
-  
+  }, [size]);
+
   useEffect(() => {
     if (isLoggedin) {
       router.push('/profile');

@@ -1,4 +1,4 @@
-import { useAppSelector } from '@/app/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
 import {
   FieldItem,
   FieldList,
@@ -7,9 +7,16 @@ import {
   UploadFoto,
 } from './UserBlock.styled';
 import { selectUser } from '@/redux/auth/authSelectors';
+import { useEffect } from 'react';
+import { getFullCurrentUser } from '@/redux/auth/authOperations';
 
 export default function UserBlock() {
   const userData = useAppSelector(selectUser);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getFullCurrentUser());
+  }, [dispatch])
 
   return (
     <div>
