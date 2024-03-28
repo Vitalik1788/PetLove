@@ -50,6 +50,7 @@ export default function BurgerMenu({
               <LinksItem>
                 <StyledLink
                   href="/news"
+                  onClick={closeModal}
                   style={
                     activeUserPage === '/news'
                       ? { border: '1px solid #f6b83d' }
@@ -62,6 +63,7 @@ export default function BurgerMenu({
               <LinksItem>
                 <StyledLink
                   href="/notices"
+                  onClick={closeModal}
                   style={
                     activeUserPage === '/notices'
                       ? { border: '1px solid #f6b83d' }
@@ -74,6 +76,7 @@ export default function BurgerMenu({
               <LinksItem>
                 <StyledLink
                   href="/friends"
+                  onClick={closeModal}
                   style={
                     activeUserPage === '/friends'
                       ? { border: '1px solid #f6b83d' }
@@ -109,6 +112,7 @@ export default function BurgerMenu({
               <LinksItem>
                 <StyledLink
                   href="/news"
+                  onClick={closeModal}
                   style={
                     activeUserPage === '/news'
                       ? {
@@ -127,6 +131,7 @@ export default function BurgerMenu({
               <LinksItem>
                 <StyledLink
                   href="/notices"
+                  onClick={closeModal}
                   style={
                     activeUserPage === '/notices'
                       ? {
@@ -145,6 +150,7 @@ export default function BurgerMenu({
               <LinksItem>
                 <StyledLink
                   href="/friends"
+                  onClick={closeModal}
                   style={
                     activeUserPage === '/friends'
                       ? {

@@ -20,12 +20,18 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  margin-right: 8px;
-  margin-left: 8px;
   border-radius: 50%;
   border: 1px solid rgba(38, 38, 38, 0.2);
   background-color: transparent;
   cursor: pointer;
+}
+
+.start_angle {
+  margin-right: 6px;
+}
+
+.end_angle {
+  margin-left: 6px;
 }
 
 @media screen and (min-width: 768px) {
