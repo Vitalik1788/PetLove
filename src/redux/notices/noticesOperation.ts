@@ -22,3 +22,13 @@ export const getGender = createAsyncThunk(
     } catch (error) {}
   }
 );
+
+export const getSpecies = createAsyncThunk(
+  'notices/getSpecies',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/notices/species');
+      return response.data;
+    } catch (error) {}
+  }
+);
