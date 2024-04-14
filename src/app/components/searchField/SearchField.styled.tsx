@@ -13,7 +13,7 @@ export const StyledField = styled(Field)`
   padding: 12px;
   border-radius: 30px;
   border: 1px solid rgba(38, 38, 38, 0.15);
-  background-color: inherit;
+  background-color: #ffffff;
   outline: none;
   font-family: inherit;
   font-size: 14px;

@@ -41,7 +41,7 @@ export default function SearchField() {
               name="text"
               type="text"
               values={values.text}
-              placeholder="Search"
+              placeholder="Search"              
             />
             <SearchIconBox type="submit">
               <SearchIcon />

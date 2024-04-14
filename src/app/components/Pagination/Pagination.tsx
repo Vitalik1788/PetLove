@@ -25,7 +25,7 @@ export default function Pagination({
       </button>
       <ReactPaginate
         initialPage={itemOffset - 1}
-        pageRangeDisplayed={2}
+        pageRangeDisplayed={1}
         breakLabel="..."
         pageCount={totalPages}
         onPageChange={handlePageClick}
