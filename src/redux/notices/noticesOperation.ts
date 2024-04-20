@@ -32,3 +32,13 @@ export const getSpecies = createAsyncThunk(
     } catch (error) {}
   }
 );
+
+export const getNotices = createAsyncThunk(
+  'notices/getNotices',
+  async (data, thunkAPI) => {
+    try {
+      const response = await axios.get('/notices');
+      return response.data;
+    } catch (error) {}
+  }
+);
