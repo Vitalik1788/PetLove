@@ -58,6 +58,7 @@ export const DetailValue = styled.p`
 `;
 
 export const Comment = styled.p`
+  min-height: 36px;
   margin-bottom: 42px;
   font-family: inherit;
   font-size: 14px;

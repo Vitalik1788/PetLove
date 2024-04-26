@@ -6,4 +6,15 @@ export const ListStyled = styled.ul`
   grid-auto-rows: minmax(335px, auto);
   grid-row-gap: 20px;
   list-style: none;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 32px;
+    grid-column-gap: 40px;
+  }
 `;

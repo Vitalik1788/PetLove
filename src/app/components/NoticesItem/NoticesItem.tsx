@@ -63,7 +63,7 @@ export default function NoticesItem({ notices }: any) {
         </li>
       </ul>
       <Comment>{notices.comment}</Comment>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap:'10px'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap:'10px'}}>
         <ButtonStyled>Learn more</ButtonStyled>
         <SVGBox>
           <SVGHeart>
