@@ -5,6 +5,7 @@ export const ListStyled = styled.ul`
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(335px, auto);
   grid-row-gap: 20px;
+  grid-column-gap: 0;
   list-style: none;
 
   @media screen and (min-width: 768px) {

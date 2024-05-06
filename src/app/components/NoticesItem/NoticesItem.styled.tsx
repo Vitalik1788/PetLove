@@ -21,6 +21,11 @@ export const CardTitle = styled.h2`
   line-height: 20px;
   text-align: left;
   color: #2b2b2a;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 export const StyledSvg = styled.svg`
@@ -35,6 +40,10 @@ export const Popularity = styled.p`
   line-height: 18px;
   text-align: left;
   color: #2b2b2a;
+
+  @media screen and (min-width: 768px) {
+    line-height: 20px;
+  }
 `;
 
 export const DetailTitle = styled.h3`
@@ -81,6 +90,15 @@ export const ButtonStyled = styled.button`
   background-color: #f6b83d;
   outline: none;
   border: transparent;
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 78px;
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 14px 89px;
+  }
 `;
 
 export const SVGBox = styled.div`
@@ -91,6 +109,11 @@ export const SVGBox = styled.div`
   height: 46px;
   background-color: #fff4df;
   border-radius: 30px;
+
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const SVGHeart = styled.svg`  

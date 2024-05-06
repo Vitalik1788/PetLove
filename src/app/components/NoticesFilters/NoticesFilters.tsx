@@ -1,10 +1,18 @@
 import Select from 'react-select';
 import SearchField from '../searchField/SearchField';
-import { Box, FiltersBox } from './NoticesFilters.styled';
+import { Box, FiltersBox, FlexWrapper } from './NoticesFilters.styled';
 import { useAppDispatch, useAppSelector } from '@/app/hooks/hooks';
 import { useEffect, useState } from 'react';
-import { getCategory, getGender, getSpecies } from '@/redux/notices/noticesOperation';
-import { selectCategory, selectSex, selectSpecies } from '@/redux/notices/noticesSelectors';
+import {
+  getCategory,
+  getGender,
+  getSpecies,
+} from '@/redux/notices/noticesOperation';
+import {
+  selectCategory,
+  selectSex,
+  selectSpecies,
+} from '@/redux/notices/noticesSelectors';
 
 export default function NoticesFilters() {
   const [categoryOptions, setCategoryOptions] = useState(null);
@@ -45,38 +53,40 @@ export default function NoticesFilters() {
 
   return (
     <Box>
-      <SearchField />
-      <FiltersBox>
-        <Select
-          defaultValue={categoryOptions}
-          placeholder="Category"
-          options={data}
-          styles={{
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              borderRadius: '30px',
-              color: '#262626',
-              fontFamily: 'inherit',
-              fontWeight: 500,
-              fontSize: '14px',
-            }),
-          }}
-        />
-        <Select
-          placeholder="By gender"
-          options={sexData}
-          styles={{
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              borderRadius: '30px',
-              color: '#262626',
-              fontFamily: 'inherit',
-              fontWeight: 500,
-              fontSize: '14px',
-            }),
-          }}
-        />
-      </FiltersBox>
+      <FlexWrapper>
+        <SearchField />
+        <FiltersBox>
+          <Select
+            defaultValue={categoryOptions}
+            placeholder="Category"
+            options={data}
+            styles={{
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderRadius: '30px',
+                color: '#262626',
+                fontFamily: 'inherit',
+                fontWeight: 500,
+                fontSize: '14px',
+              }),
+            }}
+          />
+          <Select
+            placeholder="By gender"
+            options={sexData}
+            styles={{
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderRadius: '30px',
+                color: '#262626',
+                fontFamily: 'inherit',
+                fontWeight: 500,
+                fontSize: '14px',
+              }),
+            }}
+          />
+        </FiltersBox>
+      </FlexWrapper>
       <Select
         placeholder="By type"
         options={speciesData}

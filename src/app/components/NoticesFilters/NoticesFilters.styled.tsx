@@ -6,7 +6,21 @@ export const Box = styled.div`
   margin-top: 40px;
   border-radius: 30px;
   background-color: #fff4df;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+  }
 `;
+
+export const FlexWrapper = styled.div`
+  
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
+
 
 export const FiltersBox = styled.div`
   display: grid;
